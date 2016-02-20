@@ -15,6 +15,8 @@
 		B5AFCF0A1C7886AD0098AD2A /* MusicVideoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AFCF091C7886AD0098AD2A /* MusicVideoTests.swift */; };
 		B5AFCF151C7886AD0098AD2A /* MusicVideoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AFCF141C7886AD0098AD2A /* MusicVideoUITests.swift */; };
 		B5AFCF271C788C4D0098AD2A /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AFCF261C788C4D0098AD2A /* APIManager.swift */; };
+		B5AFCF2A1C78B21E0098AD2A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AFCF291C78B21E0098AD2A /* Constants.swift */; };
+		B5AFCF2C1C78B38D0098AD2A /* MusicVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AFCF2B1C78B38D0098AD2A /* MusicVideo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		B5AFCF141C7886AD0098AD2A /* MusicVideoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicVideoUITests.swift; sourceTree = "<group>"; };
 		B5AFCF161C7886AD0098AD2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5AFCF261C788C4D0098AD2A /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		B5AFCF291C78B21E0098AD2A /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B5AFCF2B1C78B38D0098AD2A /* MusicVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicVideo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 		B5AFCEF31C7886AC0098AD2A /* MusicVideo */ = {
 			isa = PBXGroup;
 			children = (
+				B5AFCF281C78B1F40098AD2A /* Utils */,
 				B5AFCF231C7889630098AD2A /* Controller */,
 				B5AFCF221C7889480098AD2A /* Model */,
 				B5AFCF241C7889800098AD2A /* View */,
@@ -129,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				B5AFCF261C788C4D0098AD2A /* APIManager.swift */,
+				B5AFCF2B1C78B38D0098AD2A /* MusicVideo.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -158,6 +164,14 @@
 				B5AFCF001C7886AC0098AD2A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B5AFCF281C78B1F40098AD2A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B5AFCF291C78B21E0098AD2A /* Constants.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,7 +307,9 @@
 			files = (
 				B5AFCF271C788C4D0098AD2A /* APIManager.swift in Sources */,
 				B5AFCEF71C7886AC0098AD2A /* ViewController.swift in Sources */,
+				B5AFCF2C1C78B38D0098AD2A /* MusicVideo.swift in Sources */,
 				B5AFCEF51C7886AC0098AD2A /* AppDelegate.swift in Sources */,
+				B5AFCF2A1C78B21E0098AD2A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
