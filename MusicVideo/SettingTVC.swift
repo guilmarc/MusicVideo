@@ -12,17 +12,11 @@ class SettingTVC: UITableViewController {
 
     
     @IBOutlet weak var aboutDisplay: UILabel!
-    
     @IBOutlet weak var feedbackDisplay: UILabel!
-    
     @IBOutlet weak var securityDisplay: UILabel!
-    
     @IBOutlet weak var touchID: UISwitch!
-    
     @IBOutlet weak var bestImageDisplay: UILabel!
-    
     @IBOutlet weak var APICount: UILabel!
-    
     @IBOutlet weak var sliderCount: UISlider!
     
     
@@ -38,6 +32,8 @@ class SettingTVC: UITableViewController {
         self.tableView.alwaysBounceVertical = false
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "preferredFontChange", name: UIContentSizeCategoryDidChangeNotification, object: nil)
+        
+        self.touchID.on = NSUserDefaults.standardUserDefaults().boolForKey("SecuritySetting")
     }
 
     func preferredFontChange(){
@@ -47,6 +43,11 @@ class SettingTVC: UITableViewController {
         self.securityDisplay.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
         self.bestImageDisplay.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
         self.APICount.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+    }
+    
+    @IBAction func touchIDSecurity(sender: UISwitch) {
+    
+        NSUserDefaults.standardUserDefaults().setBool(self.touchID.on, forKey: "SecuritySetting")
     }
     
     

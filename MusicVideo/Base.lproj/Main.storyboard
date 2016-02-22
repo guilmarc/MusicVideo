@@ -190,6 +190,9 @@
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hUs-xx-NA1">
                                                     <rect key="frame" x="543" y="11" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="touchIDSecurity:" destination="snv-f9-uX2" eventType="valueChanged" id="TDn-Ud-kVN"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Security" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ltl-Ib-K5L">
                                                     <rect key="frame" x="8" y="16" width="64" height="21"/>
