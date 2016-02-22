@@ -153,14 +153,20 @@ class MusicVideoTVC: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "musicDetail" {
+            if let indexPath =  self.tableView.indexPathForSelectedRow  {
+                let video = videos[indexPath.row]
+                let controller = segue.destinationViewController as! MusicVideoDetailVC
+                controller.videos = video
+            }
+        }
+        
     }
-    */
 
 }

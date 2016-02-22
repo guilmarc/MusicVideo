@@ -30,7 +30,7 @@
                                     <constraint firstAttribute="height" constant="21" id="qME-u2-OGN"/>
                                     <constraint firstAttribute="width" constant="286" id="vC6-2J-eob"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -40,13 +40,13 @@
                                     <constraint firstAttribute="height" constant="21" id="9aj-ya-uKC"/>
                                     <constraint firstAttribute="width" constant="266" id="H0C-bf-RaL"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AsP-ru-Ebp">
                                 <rect key="frame" x="20" y="426" width="560" height="111"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -55,7 +55,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="qay-5I-jQ1"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -83,6 +83,13 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Mmd-mP-G6a"/>
                         <barButtonItem systemItem="action" id="iSB-VU-C7X"/>
                     </toolbarItems>
+                    <connections>
+                        <outlet property="vGenre" destination="bWZ-eB-nuh" id="Cur-CG-Oxc"/>
+                        <outlet property="vName" destination="LSP-ws-XZz" id="S2D-eo-HZy"/>
+                        <outlet property="vPrice" destination="oCa-gw-qKj" id="zpS-vE-uuk"/>
+                        <outlet property="vRights" destination="AsP-ru-Ebp" id="p8l-x9-dF5"/>
+                        <outlet property="videoImage" destination="MQi-Sz-zk9" id="a2e-Gc-tTo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rmv-ly-Uc9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -146,7 +153,7 @@
                                     <outlet property="musicImage" destination="WmG-eI-9nr" id="u9i-M8-pwp"/>
                                     <outlet property="musicTitle" destination="BAv-GL-kmD" id="zhI-1B-wkP"/>
                                     <outlet property="rank" destination="tSP-t7-Bwi" id="Zgh-cv-Dcf"/>
-                                    <segue destination="GsP-GR-lff" kind="show" id="WCq-di-OBo"/>
+                                    <segue destination="GsP-GR-lff" kind="show" identifier="musicDetail" id="WCq-di-OBo"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
