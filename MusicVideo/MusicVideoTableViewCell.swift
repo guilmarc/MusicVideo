@@ -30,11 +30,13 @@ class MusicVideoTableViewCell: UITableViewCell {
         
         if video!.vImageData != nil {
             //Get image from local "cache"
+            print("Get data from the array")
             musicImage.image = UIImage(data: video!.vImageData!)
         }
         else
         {
             //Get Image from the web
+            print("Get image from the backgrouhnd thread")
             self.getVideoImage(video!, imageView: musicImage)
             
         }
