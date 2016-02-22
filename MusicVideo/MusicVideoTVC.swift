@@ -41,8 +41,7 @@ class MusicVideoTVC: UITableViewController {
         
         switch reachabilityStatus {
         case NOACCESS :
-            view.backgroundColor = UIColor.redColor()
-            
+            //view.backgroundColor = UIColor.redColor()
             
             //Prnsent this Alert only while the View is completelly loaded
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
@@ -65,7 +64,7 @@ class MusicVideoTVC: UITableViewController {
             })
         
         default:
-            view.backgroundColor = UIColor.greenColor()
+            //view.backgroundColor = UIColor.greenColor()
             if videos.count > 0 {
                 print("do not refresh the api, refresh will be done manually")
             } else {
@@ -78,7 +77,7 @@ class MusicVideoTVC: UITableViewController {
     func runAPI(){
         //Call API
         let api = APIManager()
-        api.loadData("https://itunes.apple.com/ca/rss/topmusicvideos/limit=100/json", completion: didLoadData)
+        api.loadData("https://itunes.apple.com/ca/rss/topmusicvideos/limit=200/json", completion: didLoadData)
     }
     
     // Is called just as the object is about to be deallocated
@@ -102,12 +101,16 @@ class MusicVideoTVC: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
-        cell.detailTextLabel!.text = videos[indexPath.row].vName
-        cell.textLabel!.text = String(indexPath.row + 1)
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! MusicVideoTableViewCell
+        
+        cell.video =  videos[indexPath.row]
+      
         return cell
     }
     
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 95
+    }
 
     /*
     // Override to support conditional editing of the table view.

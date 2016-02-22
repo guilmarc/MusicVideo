@@ -30,8 +30,9 @@ class APIManager {
                         if let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as? JSONDictionnary, feed = json["feed"] as? JSONDictionnary, entries = feed["entry"] as? JSONArray {
                             
                             var videos = [Videos]()
-                            for entry in entries {
+                            for (index, entry) in entries.enumerate() {
                                 let entry = Videos(data: entry as! JSONDictionnary)
+                                entry.vRank = index + 1
                                 videos.append(entry)
                             }
                             

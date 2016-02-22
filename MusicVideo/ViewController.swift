@@ -25,7 +25,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         //Call API
         let api = APIManager()
-        api.loadData("https://itunes.apple.com/ca/rss/topmusicvideos/limit=100/json", completion: didLoadData)
+        api.loadData("https://itunes.apple.com/ca/rss/topmusicvideos/limit=200/json", completion: didLoadData)
     
     }
 
