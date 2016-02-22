@@ -34,6 +34,11 @@ class SettingTVC: UITableViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "preferredFontChange", name: UIContentSizeCategoryDidChangeNotification, object: nil)
         
         self.touchID.on = NSUserDefaults.standardUserDefaults().boolForKey("SecuritySetting")
+        
+        if let count = NSUserDefaults.standardUserDefaults().objectForKey("APICount") as? Int {
+            APICount.text = "\(count)"
+            sliderCount.value = Float(count)
+        }
     }
 
     func preferredFontChange(){
@@ -50,6 +55,13 @@ class SettingTVC: UITableViewController {
         NSUserDefaults.standardUserDefaults().setBool(self.touchID.on, forKey: "SecuritySetting")
     }
     
+    
+    @IBAction func valueChanged(sender: UISlider) {
+    
+        NSUserDefaults.standardUserDefaults().setObject(Int(sliderCount.value), forKey: "APICount")
+        self.APICount.text = "\(Int(sliderCount.value))"
+        //NSUserDefaults.standardUserDefaults().synchronize()
+    }
     
     // Is called just as the object is about to be deallocated
     deinit
