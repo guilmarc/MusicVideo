@@ -23,6 +23,9 @@ class Videos {
     private var _vLinkToiTunes:String
     private var _vReleaseDate:String
     
+    // This variable gets created from the UI
+    var vImageData:NSData?
+    
     var vName: String { return _vName }
     var vRights: String { return _vRights }
     var vPrice: String { return _vPrice }
@@ -33,6 +36,7 @@ class Videos {
     var vGenre: String { return _vGenre }
     var vLinkToiTunes: String { return _vLinkToiTunes }
     var vReleaseDate: String { return _vReleaseDate }
+
     
     init(data: JSONDictionnary) {
         if let name = data["im:name"] as? JSONDictionnary, vName = name["label"] as? String {

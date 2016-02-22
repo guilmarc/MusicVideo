@@ -28,5 +28,42 @@ class MusicVideoTableViewCell: UITableViewCell {
         rank.text = String(video!.vRank)
         musicImage.image = UIImage(named: "imageNotAvailable")
         
+        if video!.vImageData != nil {
+            //Get image from local "cache"
+            musicImage.image = UIImage(data: video!.vImageData!)
+        }
+        else
+        {
+            //Get Image from the web
+            self.getVideoImage(video!, imageView: musicImage)
+            
+        }
+        
+        
+        
+    }
+    
+    func getVideoImage(video: Videos, imageView : UIImageView){
+        
+        
+        
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { () -> Void in
+            
+            let data  = NSData(contentsOfURL: NSURL(string: video.vImageUrl)!)
+            
+            var image : UIImage?
+            if data != nil {
+                video.vImageData = data
+                image = UIImage(data: data!)
+            }
+            
+            //Return it back to the Main Queue
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                imageView.image = image
+            })
+            
+        }
+        
     }
 }
