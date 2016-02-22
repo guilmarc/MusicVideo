@@ -27,6 +27,8 @@ class APIManager {
                     
                     
                     do {
+                        
+                        
                         if let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as? JSONDictionnary, feed = json["feed"] as? JSONDictionnary, entries = feed["entry"] as? JSONArray {
                             
                             var videos = [Videos]()
