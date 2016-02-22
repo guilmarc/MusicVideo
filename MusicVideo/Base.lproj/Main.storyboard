@@ -30,18 +30,18 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rank" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tSP-t7-Bwi">
-                                            <rect key="frame" x="130" y="13" width="454" height="21"/>
+                                            <rect key="frame" x="130" y="8" width="454" height="40"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="T6f-Zx-kJU"/>
+                                                <constraint firstAttribute="height" constant="40" id="T6f-Zx-kJU"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Music Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BAv-GL-kmD">
-                                            <rect key="frame" x="130" y="42" width="454" height="43"/>
+                                            <rect key="frame" x="130" y="52" width="454" height="40"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="43" id="av1-2S-kyg"/>
+                                                <constraint firstAttribute="height" constant="40" id="av1-2S-kyg"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -50,12 +50,12 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstItem="BAv-GL-kmD" firstAttribute="top" secondItem="tSP-t7-Bwi" secondAttribute="bottom" constant="8" id="4eY-R6-qJw"/>
+                                        <constraint firstItem="BAv-GL-kmD" firstAttribute="top" secondItem="tSP-t7-Bwi" secondAttribute="bottom" constant="4" id="4eY-R6-qJw"/>
                                         <constraint firstItem="tSP-t7-Bwi" firstAttribute="leading" secondItem="WmG-eI-9nr" secondAttribute="trailing" constant="8" id="7o6-gg-1Sh"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="BAv-GL-kmD" secondAttribute="trailing" constant="8" id="AoC-aZ-XK4"/>
                                         <constraint firstItem="BAv-GL-kmD" firstAttribute="leading" secondItem="WmG-eI-9nr" secondAttribute="trailing" constant="8" id="Lbx-e0-wYL"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="tSP-t7-Bwi" secondAttribute="trailing" constant="8" id="M62-R7-V7i"/>
-                                        <constraint firstItem="tSP-t7-Bwi" firstAttribute="top" secondItem="vhO-EJ-viK" secondAttribute="topMargin" constant="5" id="MMu-dh-mt6"/>
+                                        <constraint firstItem="tSP-t7-Bwi" firstAttribute="top" secondItem="vhO-EJ-viK" secondAttribute="topMargin" id="MMu-dh-mt6"/>
                                         <constraint firstItem="WmG-eI-9nr" firstAttribute="leading" secondItem="vhO-EJ-viK" secondAttribute="leading" constant="2" id="cX6-6m-PVk"/>
                                         <constraint firstItem="WmG-eI-9nr" firstAttribute="top" secondItem="vhO-EJ-viK" secondAttribute="top" constant="8" id="qAN-Jv-x2W"/>
                                     </constraints>
