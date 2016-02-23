@@ -12,6 +12,8 @@ class MusicVideoTVC: UITableViewController {
 
     var videos = [Videos]()
     
+    var limit = 100
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,6 +31,9 @@ class MusicVideoTVC: UITableViewController {
     }
     
     func didLoadData(videos: [Videos])  {
+        
+        
+        self.title = "iTunes Top \(limit) videos"
         
         print(reachabilityStatus)
         
@@ -79,10 +84,29 @@ class MusicVideoTVC: UITableViewController {
         
     }
     
+    @IBAction func refresh(sender: UIRefreshControl) {
+        refreshControl?.endRefreshing()
+        runAPI()
+    }
+    
+    func getAPICount() {
+        if let value = NSUserDefaults.standardUserDefaults().objectForKey("APICount") as? Int {
+            self.limit = value
+        }
+        
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "E, dd MMM yyyy HH:mm:ss"
+        let refreshDate = formatter.stringFromDate(NSDate())
+        refreshControl?.attributedTitle = NSAttributedString(string: "\(refreshDate)")
+    }
+    
     func runAPI(){
+        
+        getAPICount()
+        
         //Call API
         let api = APIManager()
-        api.loadData("https://itunes.apple.com/ca/rss/topmusicvideos/limit=200/json", completion: didLoadData)
+        api.loadData("https://itunes.apple.com/ca/rss/topmusicvideos/limit=\(self.limit)/json", completion: didLoadData)
     }
     
     // Is called just as the object is about to be deallocated

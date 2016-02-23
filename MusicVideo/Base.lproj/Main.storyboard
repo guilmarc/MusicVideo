@@ -413,6 +413,9 @@
                     <navigationItem key="navigationItem" id="AEh-oL-tqu"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="BeH-dZ-Poa">
                         <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refresh:" destination="1a9-K3-sJE" eventType="valueChanged" id="iNf-Ws-W6Y"/>
+                        </connections>
                     </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2dP-lx-3sb" userLabel="First Responder" sceneMemberID="firstResponder"/>
