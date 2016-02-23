@@ -118,7 +118,11 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Mmd-mP-G6a"/>
-                        <barButtonItem systemItem="action" id="iSB-VU-C7X"/>
+                        <barButtonItem systemItem="action" id="iSB-VU-C7X">
+                            <connections>
+                                <action selector="socialMedia:" destination="GsP-GR-lff" id="arv-J4-knx"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <connections>
                         <outlet property="vGenre" destination="bWZ-eB-nuh" id="Cur-CG-Oxc"/>
