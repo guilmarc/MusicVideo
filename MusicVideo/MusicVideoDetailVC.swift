@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AVKit
+import AVFoundation
 
 class MusicVideoDetailVC: UIViewController {
 
@@ -41,6 +43,15 @@ class MusicVideoDetailVC: UIViewController {
         self.title = videos.vArtist
     }
     
+    @IBAction func playVideo(sender: UIBarButtonItem) {
+        let player = AVPlayer(URL: NSURL(string: videos.vVideoUrl)!)
+        let playerVC = AVPlayerViewController()
+        playerVC.player = player
+        
+        self.presentViewController(playerVC, animated: true) { () -> Void in
+            playerVC.player?.play()
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
