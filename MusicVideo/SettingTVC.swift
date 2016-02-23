@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MessageUI
 
-class SettingTVC: UITableViewController {
+class SettingTVC: UITableViewController, MFMailComposeViewControllerDelegate {
 
     
     @IBOutlet weak var aboutDisplay: UILabel!
@@ -68,6 +69,46 @@ class SettingTVC: UITableViewController {
     {
         NSNotificationCenter.defaultCenter().removeObserver(self, name : UIContentSizeCategoryDidChangeNotification, object: nil)
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 0 && indexPath.row == 1 {
+            
+            let mailComposerViewController = configureMail()
+            
+            if MFMailComposeViewController.canSendMail() {
+                self.presentViewController(mailComposerViewController, animated: true, completion: nil)
+            } else {
+                mailAlert()
+            }
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            
+        }
+    }
+    
+    func configureMail() -> MFMailComposeViewController {
+        
+        let mailComposeVC = MFMailComposeViewController()
+        mailComposeVC.mailComposeDelegate = self
+        mailComposeVC.setToRecipients(["hk78@live.ca"])
+        mailComposeVC.setSubject("Music Video App Feedback")
+        mailComposeVC.setMessageBody("Hi,\n\nI would like to share the following feedback...\n", isHTML: false)
+        return mailComposeVC
+    }
+    
+    
+    func mailAlert() {
+        
+        let alertController: UIAlertController = UIAlertController(title: "Alert", message: "No e-Mail Account setup for Phone", preferredStyle: .Alert)
+        
+        let okAction = UIAlertAction(title: "Ok", style: .Default) { action -> Void in
+            //do something if you want
+        }
+        
+        alertController.addAction(okAction)
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
+        
+    }
 
     
     /*
@@ -79,5 +120,21 @@ class SettingTVC: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        switch result.rawValue {
+        case MFMailComposeResultCancelled.rawValue:
+            print("Mail cancelled")
+        case MFMailComposeResultSaved.rawValue:
+            print("Mail saved")
+        case MFMailComposeResultSent.rawValue:
+            print("Mail sent")
+        case MFMailComposeResultFailed.rawValue:
+            print("Mail Failed")
+        default:
+            print("Unknown Issue")
+        }
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 
 }
